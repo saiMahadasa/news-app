@@ -13,7 +13,7 @@ const App = () => {
     const fetchNews = async () => {
       try {
         const response = await axios.get(
-          `https://newsapi.org/v2/top-headlines?category=${category}&country=us&apiKey=${API_KEY}`
+          `https://newsapi.org/v2/top-headlines?country=us&apiKey=${process.env.REACT_APP_NEWS_API_KEY}`
         );
         setArticles(response.data.articles);
       } catch (error) {
